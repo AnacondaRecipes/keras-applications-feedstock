@@ -24,9 +24,11 @@ requirements:
     - pip
   run:
     - python
-    - keras >=2.1.6
     - numpy >=1.9.1
     - h5py
+  # avoid a direct requirement on keras to prevent a circular dependency
+  run_constrained:
+    - keras >=2.1.6
 
 test:
   imports:
